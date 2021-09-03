@@ -1,0 +1,95 @@
+<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <h1 style="color: orange;">Welcome User</h1>
+                <div class="display-t">
+                    <h1 style="color: khaki;">Play and Gain Knowledge With Quiz</h1>
+                    <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                       
+                        <h3 style="color: yellow;">Please Register/Login first to play the quiz</h3>
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="fh5co-contact">
+    <div class="container">
+        <div class="row">
+                <div class="col-md-3 "></div>
+            <div class="col-md-6 animate-box">
+        
+                
+                <form [hidden]=evt2 #rfrm="ngForm" (submit)="register(rfrm.value)" class="form" id="register">
+                    <h3>Sign Up</h3>
+                    <div class="row form-group">
+                        <div class="col-md-12 ">
+                            <!-- <label for="fname">First Name</label> -->
+                            <input name="name" ngModel type="text" id="name" class="form-control error"  placeholder="Your name">
+                        </div>
+                        <small>Error message</small>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="email">Email</label> -->
+                            <input ngModel name="email" type="text" id="email" class="form-control" placeholder="Your email address">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="subject">Subject</label> -->
+                            <input name="password" ngModel type="password" id="password" class="form-control" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="subject">Subject</label> -->
+                            <input name="cpassword" ngModel type="password" id="cpassword" class="form-control" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" value="Register" class="btn btn-primary">Register</button>
+                    </div>
+
+              <b class="text-danger">{{regMsg}}</b>
+                <p class="form-text"><a (click)="linkLogin()" class="form__link"  id="linkLogin">Already have an account? Login here </a></p>
+       </form>
+        
+                <form [hidden]=evt1  class="form form--hidden" #lfrm="ngForm"  (submit)="login(lfrm.value)" id="login">
+                    <h3>Login</h3>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="email">Email</label> -->
+                            <input name="email" type="text" id="userEmail" class="form-control" ngModel placeholder="Your email address">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="subject">Subject</label> -->
+                            <input name="password" ngModel type="password" id="pass" class="form-control" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" value="Login" class="btn btn-primary">Login</button>
+                    </div>
+                    <b class="text-danger">{{loginMsg}}</b>
+
+                 <p class="form-text"><a (click)="linkRegister()" class="form__link" id="linkRegister">Don't have an account? Create Account </a></p>
+
+                </form>		
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        
+    </div>
+      <h1 *ngIf='isLogin==true'>Please Scroll Down to play quiz</h1>
+</div>
